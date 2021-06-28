@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data>
+        <record id="magento_source_mapping_tree" model="ir.ui.view">
+            <field name="name">magento.source.mapping.tree</field>
+            <field name="model">magento.source</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree create="false" string="Magento Sources">
+                    <field name="odoo_location" required="1" />
+                    <field name="mage_source_code" readonly="1" />
+                    <field name="instance_id" readonly="1" />
+                    <field name="created_by" readonly="1" />
+                    <field name="create_date" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="magento_source_action" model="ir.actions.act_window">
+            <field name="name">Magento Sources</field>
+            <field name="res_model">magento.source</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="magento_source_mapping_tree"/>
+        </record>
+    </data>
+</odoo>
