@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+	<data>
+        <record id="mob_multishop_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form.view.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='config_sku']" position="after">
+                    <separator string="Ecommerce Websites" colspan="2"/>
+                        <newline/>
+                        <tree>
+                            <field name="wk_websites_id" nolabel="1" readonly='0' widget="many2many_tags" editable='bottom'/>
+                        </tree>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
